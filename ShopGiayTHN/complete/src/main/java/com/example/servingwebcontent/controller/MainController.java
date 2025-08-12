@@ -19,7 +19,7 @@ public class MainController {
     private final KhachHangRepository khachHangRepository;
     private final GiaoDichRepository giaoDichRepository;
 
-    public WebPageController(SanPhamRepository spRepo, KhachHangRepository khRepo, GiaoDichRepository gdRepo) {
+    public MainController(SanPhamRepository spRepo, KhachHangRepository khRepo, GiaoDichRepository gdRepo) {
         this.sanPhamRepository = spRepo;
         this.khachHangRepository = khRepo;
         this.giaoDichRepository = gdRepo;
