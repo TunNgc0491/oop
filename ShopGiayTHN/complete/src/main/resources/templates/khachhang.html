@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="main :: layout (~{::body})">
+<body>
+  <div th:fragment="content">
+    <h2>Danh sách Khách hàng</h2>
+    <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr>
+          <th>Mã KH</th>
+          <th>Tên khách hàng</th>
+          <th>Số điện thoại</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="kh : ${khachhangList}">
+          <td th:text="${kh.maKh}">KH001</td>
+          <td th:text="${kh.ten}">Nguyễn Văn A</td>
+          <td th:text="${kh.sdt}">0912345678</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quản lý cửa hàng</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    main { padding: 20px; }
+  </style>
+</head>
+<body>
+  <header th:replace="fragments/navbar :: navbar"></header>
+
+  <main>
+    <div th:replace="${content}"></div>
+  </main>
+
+  <footer style="text-align: center; margin-top: 20px; padding: 10px; background: #eee;">
+    &copy; 2025 Your Company
+  </footer>
+</body>
+</html>
