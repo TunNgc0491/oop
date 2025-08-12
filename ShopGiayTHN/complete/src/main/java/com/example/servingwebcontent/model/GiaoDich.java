@@ -5,17 +5,16 @@ import java.time.LocalDateTime;
 
 @Entity
 public class GiaoDich {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Khóa chính tự tăng
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "ma_kh", nullable = false)
+    @JoinColumn(name = "maKh")
     private KhachHang khachHang;
 
     @ManyToOne
-    @JoinColumn(name = "ma_sp", nullable = false)
+    @JoinColumn(name = "maSp")
     private SanPham sanPham;
 
     private LocalDateTime thoiGian;
@@ -28,7 +27,7 @@ public class GiaoDich {
         this.thoiGian = thoiGian;
     }
 
-    // Getter/Setter
+    // getters and setters...
     public Long getId() { return id; }
     public KhachHang getKhachHang() { return khachHang; }
     public void setKhachHang(KhachHang khachHang) { this.khachHang = khachHang; }

@@ -1,22 +1,16 @@
 package com.example.servingwebcontent.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class KhachHang {
-
     @Id
-    private String maKh; // Mã khách hàng (Primary Key)
-    private String ten;  // Tên khách hàng
-    private String sdt;  // Số điện thoại
+    private String maKh;
+    private String ten;
+    private String sdt;
 
     public KhachHang() {}
-
-    public KhachHang(String ten, String sdt) {
-        this.ten = ten;
-        this.sdt = sdt;
-    }
 
     public KhachHang(String maKh, String ten, String sdt) {
         this.maKh = maKh;
@@ -24,6 +18,7 @@ public class KhachHang {
         this.sdt = sdt;
     }
 
+    // getters and setters...
     public String getMaKh() { return maKh; }
     public void setMaKh(String maKh) { this.maKh = maKh; }
     public String getTen() { return ten; }

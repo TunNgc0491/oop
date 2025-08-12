@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      th:replace="main :: layout (~{::body})">
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sách giao dịch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+</head>
 <body>
-  <div th:fragment="content">
-    <h2>Danh sách Giao dịch</h2>
-    <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%;">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Khách hàng</th>
-          <th>SĐT</th>
-          <th>Sản phẩm</th>
-          <th>Giá</th>
-          <th>Kích thước</th>
-          <th>Ảnh SP</th>
-          <th>Thời gian</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="gd : ${giaodichList}">
-          <td th:text="${gd.id}">1</td>
-          <td th:text="${gd.khachHang.ten}">Nguyễn Văn A</td>
-          <td th:text="${gd.khachHang.sdt}">0912345678</td>
-          <td th:text="${gd.sanPham.name}">Áo Thun</td>
-          <td th:text="${#numbers.formatDecimal(gd.sanPham.price, 0, 'COMMA', 2, 'POINT')} + ' VND'">150,000 VND</td>
-          <td th:text="${gd.sanPham.size}">42</td>
-          <td>
-            <img th:src="${gd.sanPham.imageURL}" alt="Ảnh SP" width="80"
-                 onerror="this.onerror=null;this.src='https://via.placeholder.com/80';" />
-          </td>
-          <td th:text="${#dates.format(gd.thoiGian, 'dd/MM/yyyy HH:mm')}">13/08/2025 10:30</td>
-        </tr>
-      </tbody>
-    </table>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" th:href="@{/}">Trang Chủ</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/sanpham}">Sản Phẩm</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/khachhang}">Khách Hàng</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/giaodich}">Giao Dịch</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
+
+<div class="container mt-3">
+    <h2>Danh sách giao dịch</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Khách Hàng</th>
+            <th>Sản Phẩm</th>
+            <th>Thời Gian</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="gd : ${giaodichs}">
+            <td th:text="${gd.id}"></td>
+            <td th:text="${gd.khachHang.ten}"></td>
+            <td th:text="${gd.sanPham.name}"></td>
+            <td th:text="${#dates.format(gd.thoiGian, 'dd/MM/yyyy HH:mm')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

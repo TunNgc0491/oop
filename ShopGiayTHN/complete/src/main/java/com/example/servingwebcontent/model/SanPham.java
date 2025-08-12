@@ -1,17 +1,16 @@
 package com.example.servingwebcontent.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class SanPham {
-
     @Id
-    private String maSp;    // Mã sản phẩm (Primary Key)
-    private String name;    // Tên sản phẩm
-    private double price;   // Giá
-    private int size;       // Kích thước
-    private String imageURL; // Link ảnh
+    private String maSp;
+    private String name;
+    private double price;
+    private int size;
+    private String imageURL;
 
     public SanPham() {}
 
@@ -23,12 +22,7 @@ public class SanPham {
         this.imageURL = imageURL;
     }
 
-    public SanPham(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    // Getter/Setter
+    // getters and setters...
     public String getMaSp() { return maSp; }
     public void setMaSp(String maSp) { this.maSp = maSp; }
     public String getName() { return name; }

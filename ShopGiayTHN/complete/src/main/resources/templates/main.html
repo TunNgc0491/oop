@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8" />
-  <title>Quản lý cửa hàng</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; }
-    main { padding: 20px; }
-  </style>
+    <title>Trang Chính</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-  <header th:replace="fragments/navbar :: navbar"></header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" th:href="@{/}">Trang Chủ</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/sanpham}">Sản Phẩm</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/khachhang}">Khách Hàng</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/giaodich}">Giao Dịch</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <main>
-    <div th:replace="${content}"></div>
-  </main>
+<div class="container mt-3">
+    <h1>Chào mừng bạn đến với cửa hàng của chúng tôi!</h1>
+    <p>Hãy sử dụng thanh điều hướng để xem dữ liệu sản phẩm, khách hàng và giao dịch.</p>
+</div>
 
-  <footer style="text-align: center; margin-top: 20px; padding: 10px; background: #eee;">
-    &copy; 2025 Your Company
-  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
