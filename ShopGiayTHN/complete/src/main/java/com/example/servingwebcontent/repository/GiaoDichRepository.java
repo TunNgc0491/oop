@@ -9,4 +9,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface GiaoDichRepository extends JpaRepository<GiaoDich, Long> {
 
     List<GiaoDich> findAll();
+
+    Object save(GiaoDich gd);
+
+    boolean existsById(Long id);
+
+    void deleteById(Long id);
 }

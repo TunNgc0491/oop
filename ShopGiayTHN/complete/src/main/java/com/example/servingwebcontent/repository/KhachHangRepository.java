@@ -16,4 +16,6 @@ public interface KhachHangRepository extends JpaRepository<KhachHang, String> {
     KhachHang save(KhachHang khachHang);
 
     Optional<KhachHang> findById(String maKh);
+
+    void deleteById(String maKh);
 }
